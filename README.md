@@ -1,7 +1,7 @@
 # ENV603-DataViz
 Practice and tutorial for ENV603 S21
 
-There are three .R files in this repo, following examples from Healy's Data Viz book: https://socviz.co/index.html#preface.
+There are three .R files in this repo, with examples modified from Healy's Data Viz book: https://socviz.co/index.html#preface.
 The goal is to practice working with GitHub, RProjects, and Tidyverse.
 
 You should fork or clone this repository and work through each .R file in order. 
