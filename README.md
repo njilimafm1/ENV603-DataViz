@@ -10,4 +10,4 @@ After you complete each exercise, be sure to commit and push your changes. Befor
 As you work through each exercise, comment your script thoroughly and perform the suggested edits to each plot. 
 The final product for each script is a figure.
 
-Once you finish, upload the link to your repo on Canvas.
+Once you finish, submit a pull request.
