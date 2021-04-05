@@ -1,14 +1,14 @@
 #### ENV 603 / 5-April-2021 / N.R. Sommer
 # Dataset 1: Religion by region
 
-# If you have not yet installed these libraries, use install.package("")
+# If you have not yet installed these libraries, use install.packages("")
 
 library(tidyverse)
 library(socviz)
 
 # Create a new table called rel_by_region
 
-rel_by_region <- gss_sm %>%
+rel_by_region <- gss_sum %>%
   group_by(bigregion, religion) %>%
   summarize(N = n()) %>%
   mutate(freq = N / sum(N),
