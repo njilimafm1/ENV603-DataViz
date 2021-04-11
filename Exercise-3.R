@@ -9,7 +9,7 @@ ggplot(data = by_country,
 # This looks terrible. Let's adjust the position of the text. Within the geom_text(), add the argument for hjust=1
 
 # This still looks terrible. You could continue to mess around with values for hjust and get there eventually. Instead, let's call up a new package and explore how to add better labels to plots using a new dataset
-install.packages("ggrepel")
+#install.packages("ggrepel")
 library(ggrepel)
 
 head(elections_historic)

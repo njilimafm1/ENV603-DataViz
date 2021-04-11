@@ -62,8 +62,10 @@ ggplot(data = by_country,
                      color = consent_law)) + 
   geom_point(size=3) +
   labs(x = "Donor Procurement Rate",
-       y = "", color = "Consent Law") +
-  theme(legend.position="top")
+       y = "",title = "some title", color = "Consent Law") +
+  theme(legend.position="top", 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
 
 # Try adding a facet_wrap() by consent law to the plot above. Facet_wrap has additional arguments that you could explore, including scales =, and ncol=. Again, Google is your friend here.
 
