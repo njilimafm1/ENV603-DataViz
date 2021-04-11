@@ -112,7 +112,10 @@ ggplot(elections_historic, aes(x = popular_pct, y = ec_pct,
        y = "Winner's share of electoral college vote", 
        title = "Presidential Elections: Popular & Electoral College Margins", 
        subtitle = "1824-2016",
-       caption = "Wilson took advantage of a Republican split, winning 40 states with just 41.8% of the popular vote.") # adds a caption
+       
+ggsave("plot3.png",
+       plot = last_plot(),
+       dpi = 300)caption = "Wilson took advantage of a Republican split, winning 40 states with just 41.8% of the popular vote.") # adds a caption
 
 
 # Armed with the numerous examples from above, and using the elections_historic dataset, make a new graph that:
@@ -123,6 +126,3 @@ ggplot(elections_historic, aes(x = popular_pct, y = ec_pct,
 
 # Save your plot: 
 
-ggsave("plot3.png",
-       plot = last_plot(),
-       dpi = 300)
