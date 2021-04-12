@@ -118,11 +118,11 @@ ggplot(elections_historic, aes(x = popular_pct, y = ec_pct,
 # (2) Includes annotated text
 # (3) Includes an annotated shape
 # Be sure to update the title and caption accordingly. 
-
+# filter dataframe to get data to be highligheted
 # Save your plot: 
 
 ggsave("plot3.png",
        plot = last_plot(),
-       dpi = 300)caption = "Wilson took advantage of a Republican split, winning 40 states with just 41.8% of the popular vote.") # adds a caption
+       dpi = 300="Wilson took advantage of a Republican split, winning 40 states with just 41.8% of the popular vote.") # adds a caption
 
 
