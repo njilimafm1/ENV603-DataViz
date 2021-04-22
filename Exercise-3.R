@@ -21,7 +21,7 @@ ggplot(elections_historic, aes(x = popular_pct, y = ec_pct,
   geom_hline(yintercept = 0.5, size = 1.4, color = "gray80") +
   geom_vline(xintercept = 0.5, size = 1.4, color = "gray80") +
   geom_point() +
-  #geom_text_repel() +
+  geom_text_repel() +
   scale_x_continuous(labels = scales::percent) +
   scale_y_continuous(labels = scales::percent) +
   labs(x = "Winner's share of popular vote", 
@@ -93,7 +93,7 @@ ggplot(elections_historic, aes(x = popular_pct, y = ec_pct,
   geom_point() +
   geom_text_repel(data = subset(elections_historic,
                                 year %in% "1912" |
-                                winner %in% "John Quincy Adams")) +
+                                winner_lname %in% "Lincoln")) +
   annotate(geom="text", x = .3, y = .93,
            label = "Wilson still performed better than \n Adams' 30% share of the popular vote.",
            hjust=0, 
@@ -102,7 +102,7 @@ ggplot(elections_historic, aes(x = popular_pct, y = ec_pct,
   annotate(geom = "segment", 
            x = .41, xend = .32,
            y = .78, yend = .37, 
-           colour = "red",
+           color = "red",
            alpha = .4,
            arrow =arrow()) +
   scale_x_continuous(labels = scales::percent) +
@@ -111,7 +111,7 @@ ggplot(elections_historic, aes(x = popular_pct, y = ec_pct,
   labs(x = "Winner's share of popular vote", 
        y = "Winner's share of electoral college vote", 
        title = "Presidential Elections: Popular & Electoral College Margins", 
-       subtitle = "1824-2016",
+       subtitle = "1824-2016")
 
 # Armed with the numerous examples from above, and using the elections_historic dataset, make a new graph that:
 # (1) Highlights at least two outliers, either using text or color.
@@ -123,6 +123,6 @@ ggplot(elections_historic, aes(x = popular_pct, y = ec_pct,
 
 ggsave("plot3.png",
        plot = last_plot(),
-       dpi = 300="Wilson took advantage of a Republican split, winning 40 states with just 41.8% of the popular vote.") # adds a caption
+       dpi = 300)
 
 
