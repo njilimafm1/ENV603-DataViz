@@ -1,4 +1,4 @@
-Example change'#### ENV 603 / 5-April-2021 / N.R. Sommer
+### ENV 603 / 5-April-2021 / N.R. Sommer
 # Dataset 1: Religion by region
 
 # If you have not yet installed these libraries, use install.packages("")#
@@ -44,7 +44,7 @@ p2
 # (3) Reorder the bars
 # (4) Choose a new color scheme
 
-p3<-p2 + labs(title="Religion by region")+theme(
+p3 <-p2 + labs(title="Religion by region")+theme(
  panel.grid.major = element_blank (), 
  panel.grid.minor = element_blank ()
 )
