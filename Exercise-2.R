@@ -1,12 +1,14 @@
 #### ENV 603 / 5-April-2021 / N.R. Sommer
 # Dataset 2: Organ transplants for OECD countries
 
+library(ggthemes)
+
 # We'll start by naively graphing some of this data. Take a look at a scatterplot of organ donors vs time. 
 ggplot(data = organdata,
        mapping = aes(x = year, y = donors)) + 
   geom_point()
 
-# What does the error message mean here? --> (comment your answer)
+# What does the error message mean here? --> ggplot removed missing values
 
 # Now let's use geom_line() to plot each country's time series
 ggplot(data = organdata,
@@ -17,7 +19,8 @@ ggplot(data = organdata,
 # Leaving the timeseries aside, we can also look at the number of donors by country:
 ggplot(data = organdata,
        mapping = aes(x = country, y = donors)) + 
-  geom_boxplot()
+  geom_boxplot() +
+  coord_flip()
 
 # This doesn't look great... try adding coord_flip() to the code above.
 
@@ -54,7 +57,7 @@ by_country <- organdata %>% group_by(consent_law, country) %>%
 
 by_country
 
-# What happened inside this pipeline? --> (comment your answer here)
+# What happened inside this pipeline? --> Summarized organdata by conset law and country, and the mean + standard deviation
 
 # Now for the Cleveland dot plot:
 ggplot(data = by_country,
@@ -62,10 +65,12 @@ ggplot(data = by_country,
                      color = consent_law)) + 
   geom_point(size=3) +
   labs(x = "Donor Procurement Rate",
-       y = "",title = "some title", color = "Consent Law") +
+       y = "",title = "ADD NEW TITLE", color = "Consent Law") +
   theme(legend.position="top", 
         panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank())
+        panel.grid.minor = element_blank()) + 
+  facet_wrap(~consent_law) +
+  theme_tufte()
 
 # Try adding a facet_wrap() by consent law to the plot above. Facet_wrap has additional arguments that you could explore, including scales =, and ncol=. Again, Google is your friend here.
 
